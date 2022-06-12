@@ -3,6 +3,9 @@
 -   https://noumenon-th.net/programming/2020/02/12/laravel-api/
 -   https://qiita.com/tamakiiii/items/e71040173fa0a1fcad83
 
+-   laravel x vue router
+    -   https://reffect.co.jp/laravel/laravel-vue-router-single-page-application
+
 ## エラー集
 
 -   Windows で psql 接続しようとすると以下のエラーで接続できない。
@@ -74,7 +77,7 @@ Waiting for systemd....!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 できたーーーー！！！
 
 ```
-sotto@DESKTOP-82QB9O5-wsl-wsl-wsl:~/work/laravel_api$ php artisan migrate
+$ php artisan migrate
 Migration table created successfully.
 Migrating: 2014_10_12_000000_create_users_table
 Migrated:  2014_10_12_000000_create_users_table (12.49ms)
@@ -96,6 +99,10 @@ Migrating: 2019_12_14_000001_create_personal_access_tokens_table
 Migrated:  2019_12_14_000001_create_personal_access_tokens_table (14.30ms)
 Migrating: 2022_06_07_124902_create_books_table
 Migrated:  2022_06_07_124902_create_books_table (9.18ms)
-sotto@DESKTOP-82QB9O5-wsl-wsl-wsl:~/work/laravel_api$
+```
 
+-   vue-router の install 時にエラー発生。
+
+```
+https://qiita.com/koh97222/items/c46d1ef2a63b92bb6c15
 ```
