@@ -7,12 +7,11 @@
 require("./bootstrap");
 
 import Vue from "vue";
-import VueRouter from "vue";
 
 import router from "./router";
 
-window.Vue = require("vue").default;
-Vue.use(VueRouter);
+window.Vue = Vue;
+// Vue.use(VueRouter);
 
 /**
  * The following block of code may be used to automatically register your
