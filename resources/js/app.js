@@ -7,11 +7,12 @@
 require("./bootstrap");
 
 import Vue from "vue";
-
 import router from "./router";
+import Vuetify from "vuetify";
 
 window.Vue = Vue;
 // Vue.use(VueRouter);
+Vue.use(Vuetify);
 
 /**
  * The following block of code may be used to automatically register your
@@ -38,4 +39,7 @@ Vue.component(
 const app = new Vue({
     el: "#app",
     router,
+    vuetify: new Vuetify({
+        iconfont: "mdi",
+    }),
 });
