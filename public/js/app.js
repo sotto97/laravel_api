@@ -5360,6 +5360,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -5380,6 +5392,19 @@ __webpack_require__.r(__webpack_exports__);
         name: "Github issueに登録",
         icon: "mdi-github",
         link: "/github-issue-board"
+      }],
+      notification: [{
+        id: 1,
+        context: "たけしさんからメッセージがあります。"
+      }, {
+        id: 2,
+        context: "たけしさんからメッセージがあります。"
+      }, {
+        id: 3,
+        context: "たけしさんからメッセージがあります。"
+      }, {
+        id: 4,
+        context: "たけしさんからメッセージがあります。"
       }],
       nav_lists: [{
         name: "Getting Started",
@@ -28681,22 +28706,72 @@ var render = function () {
           _vm._v(" "),
           _c(
             "v-toolbar-items",
+            {
+              scopedSlots: _vm._u([
+                {
+                  key: "activator",
+                  fn: function (ref) {
+                    var on = ref.on
+                    return [
+                      _c(
+                        "v-tab",
+                        [
+                          _c(
+                            "v-badge",
+                            _vm._g(
+                              {
+                                attrs: {
+                                  overlap: "",
+                                  color: "green",
+                                  content: "6",
+                                },
+                              },
+                              on
+                            ),
+                            [
+                              _c(
+                                "v-icon",
+                                { attrs: { medium: "", color: "" } },
+                                [_vm._v(" mdi-message-text ")]
+                              ),
+                            ],
+                            1
+                          ),
+                        ],
+                        1
+                      ),
+                    ]
+                  },
+                },
+              ]),
+            },
             [
+              _vm._v(" "),
               _c(
-                "v-tab",
+                "v-list",
                 [
-                  _c(
-                    "v-badge",
-                    { attrs: { overlap: "", color: "green", content: "6" } },
-                    [
-                      _c("v-icon", { attrs: { medium: "", color: "" } }, [
-                        _vm._v(" mdi-message-text "),
-                      ]),
-                    ],
-                    1
-                  ),
+                  _c("v-subheader", [_vm._v("通知")]),
+                  _vm._v(" "),
+                  _vm._l(_vm.notification, function (notice) {
+                    return _c(
+                      "v-list-item",
+                      { key: notice.id },
+                      [
+                        _c(
+                          "v-list-item-component",
+                          [
+                            _c("v-list-item-title", [
+                              _vm._v(_vm._s(notice.context)),
+                            ]),
+                          ],
+                          1
+                        ),
+                      ],
+                      1
+                    )
+                  }),
                 ],
-                1
+                2
               ),
               _vm._v(" "),
               _c(

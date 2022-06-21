@@ -29,9 +29,21 @@
             <v-toolbar-title>Dashboard</v-toolbar-title>
             <v-spacer></v-spacer>
             <v-toolbar-items>
-                <v-tab>
-                    <v-badge overlap color="green" content="6"> <v-icon medium color=""> mdi-message-text </v-icon> </v-badge>
-                </v-tab>
+                <!-- コメント機能 -->
+                <template v-slot:activator="{ on }">
+                    <v-tab>
+                        <v-badge v-on="on" overlap color="green" content="6"> <v-icon medium color=""> mdi-message-text </v-icon> </v-badge>
+                    </v-tab>
+                </template>
+                <v-list>
+                    <v-subheader>通知</v-subheader>
+                    <v-list-item v-for="notice in notification" :key="notice.id">
+                        <v-list-item-component>
+                            <v-list-item-title>{{ notice.context }}</v-list-item-title>
+                        </v-list-item-component>
+                    </v-list-item>
+                </v-list>
+                <!-- サポートのタブ -->
                 <v-menu offset-y>
                     <template v-slot:activator="{ on }">
                         <v-btn v-on="on" text>サポート<v-icon>mdi-menu-down</v-icon></v-btn>
@@ -67,6 +79,12 @@ export default {
                 { name: "Discordコミュニティーに参加", icon: "mdi-discord", link: "/discord-community" },
                 { name: "バグの報告", icon: "mdi-bug", link: "/report-a-bug" },
                 { name: "Github issueに登録", icon: "mdi-github", link: "/github-issue-board" },
+            ],
+            notification: [
+                { id: 1, context: "たけしさんからメッセージがあります。" },
+                { id: 2, context: "たけしさんからメッセージがあります。" },
+                { id: 3, context: "たけしさんからメッセージがあります。" },
+                { id: 4, context: "たけしさんからメッセージがあります。" },
             ],
             nav_lists: [
                 {
