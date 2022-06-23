@@ -30,26 +30,27 @@
             <v-spacer></v-spacer>
             <v-toolbar-items>
                 <!-- コメント機能 -->
-                <template v-slot:activator="{ on }">
-                    <v-tab>
-                        <v-badge v-on="on" overlap color="green" content="6"> <v-icon medium color=""> mdi-message-text </v-icon> </v-badge>
-                    </v-tab>
-                </template>
-                <v-list>
-                    <v-subheader>通知</v-subheader>
-                    <v-list-item v-for="notice in notification" :key="notice.id">
-                        <v-list-item-component>
-                            <v-list-item-title>{{ notice.context }}</v-list-item-title>
-                        </v-list-item-component>
-                    </v-list-item>
-                </v-list>
-                <!-- サポートのタブ -->
                 <v-menu offset-y>
                     <template v-slot:activator="{ on }">
-                        <v-btn v-on="on" text>サポート<v-icon>mdi-menu-down</v-icon></v-btn>
+                        <v-btn v-on="on" text>
+                            <v-badge overlap color="green" content="6"> <v-icon medium color=""> mdi-message-text </v-icon> </v-badge>
+                        </v-btn>
                     </template>
                     <v-list>
-                        <v-subheader>ヘルプ</v-subheader>
+                        <v-subheader>通知一覧</v-subheader>
+                        <v-list-item v-for="notice in notification" :key="notice.context">
+                            <v-list-item-component>
+                                <v-list-item-title>{{ notice.context }}</v-list-item-title>
+                            </v-list-item-component>
+                        </v-list-item>
+                    </v-list>
+                </v-menu>
+                <!-- 設定タブ -->
+                <v-menu offset-y>
+                    <template v-slot:activator="{ on }">
+                        <v-btn v-on="on" text><v-icon>mdi-dots-vertical</v-icon></v-btn>
+                    </template>
+                    <v-list>
                         <v-list-item v-for="support in supports" :key="support.name" :to="support.link">
                             <v-list-item-icon>
                                 <v-icon>{{ support.icon }}</v-icon>

@@ -5372,6 +5372,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -28706,72 +28707,77 @@ var render = function () {
           _vm._v(" "),
           _c(
             "v-toolbar-items",
-            {
-              scopedSlots: _vm._u([
+            [
+              _c(
+                "v-menu",
                 {
-                  key: "activator",
-                  fn: function (ref) {
-                    var on = ref.on
-                    return [
-                      _c(
-                        "v-tab",
-                        [
+                  attrs: { "offset-y": "" },
+                  scopedSlots: _vm._u([
+                    {
+                      key: "activator",
+                      fn: function (ref) {
+                        var on = ref.on
+                        return [
                           _c(
-                            "v-badge",
-                            _vm._g(
-                              {
-                                attrs: {
-                                  overlap: "",
-                                  color: "green",
-                                  content: "6",
-                                },
-                              },
-                              on
-                            ),
+                            "v-btn",
+                            _vm._g({ attrs: { text: "" } }, on),
                             [
                               _c(
-                                "v-icon",
-                                { attrs: { medium: "", color: "" } },
-                                [_vm._v(" mdi-message-text ")]
+                                "v-badge",
+                                {
+                                  attrs: {
+                                    overlap: "",
+                                    color: "green",
+                                    content: "6",
+                                  },
+                                },
+                                [
+                                  _c(
+                                    "v-icon",
+                                    { attrs: { medium: "", color: "" } },
+                                    [_vm._v(" mdi-message-text ")]
+                                  ),
+                                ],
+                                1
                               ),
                             ],
                             1
                           ),
-                        ],
-                        1
-                      ),
-                    ]
-                  },
+                        ]
+                      },
+                    },
+                  ]),
                 },
-              ]),
-            },
-            [
-              _vm._v(" "),
-              _c(
-                "v-list",
                 [
-                  _c("v-subheader", [_vm._v("通知")]),
                   _vm._v(" "),
-                  _vm._l(_vm.notification, function (notice) {
-                    return _c(
-                      "v-list-item",
-                      { key: notice.id },
-                      [
-                        _c(
-                          "v-list-item-component",
+                  _c(
+                    "v-list",
+                    [
+                      _c("v-subheader", [_vm._v("通知一覧")]),
+                      _vm._v(" "),
+                      _vm._l(_vm.notification, function (notice) {
+                        return _c(
+                          "v-list-item",
+                          { key: notice.context },
                           [
-                            _c("v-list-item-title", [
-                              _vm._v(_vm._s(notice.context)),
-                            ]),
+                            _c(
+                              "v-list-item-component",
+                              [
+                                _c("v-list-item-title", [
+                                  _vm._v(_vm._s(notice.context)),
+                                ]),
+                              ],
+                              1
+                            ),
                           ],
                           1
-                        ),
-                      ],
-                      1
-                    )
-                  }),
+                        )
+                      }),
+                    ],
+                    2
+                  ),
                 ],
-                2
+                1
               ),
               _vm._v(" "),
               _c(
@@ -28787,10 +28793,7 @@ var render = function () {
                           _c(
                             "v-btn",
                             _vm._g({ attrs: { text: "" } }, on),
-                            [
-                              _vm._v("サポート"),
-                              _c("v-icon", [_vm._v("mdi-menu-down")]),
-                            ],
+                            [_c("v-icon", [_vm._v("mdi-dots-vertical")])],
                             1
                           ),
                         ]
@@ -28802,35 +28805,31 @@ var render = function () {
                   _vm._v(" "),
                   _c(
                     "v-list",
-                    [
-                      _c("v-subheader", [_vm._v("ヘルプ")]),
-                      _vm._v(" "),
-                      _vm._l(_vm.supports, function (support) {
-                        return _c(
-                          "v-list-item",
-                          { key: support.name, attrs: { to: support.link } },
-                          [
-                            _c(
-                              "v-list-item-icon",
-                              [_c("v-icon", [_vm._v(_vm._s(support.icon))])],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "v-list-item-component",
-                              [
-                                _c("v-list-item-title", [
-                                  _vm._v(_vm._s(support.name)),
-                                ]),
-                              ],
-                              1
-                            ),
-                          ],
-                          1
-                        )
-                      }),
-                    ],
-                    2
+                    _vm._l(_vm.supports, function (support) {
+                      return _c(
+                        "v-list-item",
+                        { key: support.name, attrs: { to: support.link } },
+                        [
+                          _c(
+                            "v-list-item-icon",
+                            [_c("v-icon", [_vm._v(_vm._s(support.icon))])],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-list-item-component",
+                            [
+                              _c("v-list-item-title", [
+                                _vm._v(_vm._s(support.name)),
+                              ]),
+                            ],
+                            1
+                          ),
+                        ],
+                        1
+                      )
+                    }),
+                    1
                   ),
                 ],
                 1
