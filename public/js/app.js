@@ -5695,10 +5695,8 @@ __webpack_require__.r(__webpack_exports__);
 
 vue__WEBPACK_IMPORTED_MODULE_4__["default"].use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]); // パスとコンポーネントのマッピング
 
-var routes = [{
-  path: "/",
-  component: _views_Index_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
-}, {
+var routes = [// { path: "/", component: Index },
+{
   path: "/about",
   component: _views_About_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
 }, {
