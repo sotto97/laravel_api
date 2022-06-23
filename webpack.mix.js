@@ -15,4 +15,12 @@ mix.js("resources/js/app.js", "public/js")
     .version()
     .vue()
     .sass("resources/sass/app.scss", "public/css")
-    .postCss("resources/css/app.css", "public/css", [require("tailwindcss")]);
+    .postCss("resources/css/app.css", "public/css", [require("tailwindcss")])
+    .browserSync({
+        files: ["resources/**/*", "config/**/*", "routes/**/*", "app/**/*", "public/**/*"],
+        proxy: {
+            target: "http://localhost:8000",
+        },
+        open: false,
+        reloadOnRestart: true,
+    });
