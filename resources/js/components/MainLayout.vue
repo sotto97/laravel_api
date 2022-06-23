@@ -1,5 +1,6 @@
 <template>
     <v-app>
+        <!-- ハンバーガーメニュー -->
         <v-navigation-drawer app v-model="drawer" clipped>
             <v-container>
                 <v-list-item>
@@ -24,6 +25,7 @@
                 </v-list>
             </v-container>
         </v-navigation-drawer>
+        <!-- タイトルとheaderバーの色の設定 -->
         <v-app-bar color="grey darken-4" dark app clipped-left>
             <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
             <v-toolbar-title>Dashboard</v-toolbar-title>
@@ -63,9 +65,11 @@
                 </v-menu>
             </v-toolbar-items>
         </v-app-bar>
+        <!--  -->
         <v-main>
             <router-view />
         </v-main>
+        <!-- footerの部分 -->
         <v-footer color="grey darken-4" dark app>Shimo's</v-footer>
     </v-app>
 </template>
