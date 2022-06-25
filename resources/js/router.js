@@ -11,7 +11,7 @@ Vue.use(VueRouter);
 
 // パスとコンポーネントのマッピング
 const routes = [
-    // { path: "/", component: Index },
+    { path: "/", component: Index },
     { path: "/about", component: About },
     { path: "/demo", component: Demo },
 ];
