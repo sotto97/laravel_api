@@ -39,7 +39,7 @@
                         </v-btn>
                     </template>
                     <v-list>
-                        <v-subheader>通知一覧</v-subheader>
+                        <v-subheader class="font-semibold">通知一覧</v-subheader>
                         <v-list-item v-for="notice in notification" :key="notice.context">
                             <v-list-item-component>
                                 <v-list-item-title>{{ notice.context }}</v-list-item-title>
