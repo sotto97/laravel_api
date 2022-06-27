@@ -5,7 +5,7 @@
                 <!-- 文字列の上下中央寄せ h-8 leading-8 text-center-->
                 <div class="flex justify-center p-1">
                     <p class="bg-white w-1/2 h-8 leading-8 text-center rounded-sm cursor-pointer">Table</p>
-                    <p class="w-1/2 h-8 leading-8 text-center rounded-sm cursor-pointer hover:bg-gray-400">Chart</p>
+                    <p class="w-1/2 h-8 leading-8 text-center rounded-sm cursor-pointer hover:bg-gray-400 transition">Chart</p>
                 </div>
             </div>
             <div class="w-4/6 h-8 justify-self-center"></div>
@@ -35,10 +35,13 @@
         </div>
         <div class="flex">
             <div class="w-7/12 p-2">
-                <div class="flex">
-                    <h1 class="w-1/3 font-semibold text-xl">Recent Order</h1>
-                    <p class="w-1/3"></p>
-                    <p class="w-1/3 text-right font-semibold cursor-pointer">View All ></p>
+                <div class="flex w-full">
+                    <div class="w-1/2 h-12 leading-12">
+                        <h1 class="font-semibold text-xl">Recent Order</h1>
+                    </div>
+                    <div class="w-1/2 h-12 leading-8">
+                        <p class="text-right text-zinc-700 font-semibold cursor-pointer">View All ></p>
+                    </div>
                 </div>
                 <table class="w-full text-center border-collapse border border-slate-500">
                     <tbody class="">
@@ -76,7 +79,55 @@
                 </table>
             </div>
             <div class="w-5/12 p-2">
-                <h1 class="font-semibold text-xl">Stock Report</h1>
+                <div class="flex w-full">
+                    <div class="w-1/2 h-12 leading-12">
+                        <h1 class="font-semibold text-xl">Stock Report</h1>
+                    </div>
+                    <div class="w-1/2 h-12 leading-12 text-right">
+                        <select class="w-2/3 bg-white border border-zinc-800 focus:border-solid-2 focus:border-zinc-900 text-gray-700 py-1 px-4 pr-8 rounded" id="grid-state">
+                            <option value="latest">Latest</option>
+                            <option value="latest">Last Month</option>
+                            <option value="latest">Oldest</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="w-1/3">
+                        <p class="h-8 leading-8">T-shirt</p>
+                    </div>
+                    <div class="w-2/3">
+                        <v-progress-linear v-model="skill" color="black" height="25">
+                            <template v-slot:default="{ value }">
+                                <strong>{{ Math.ceil(value) }}%</strong>
+                            </template>
+                        </v-progress-linear>
+                    </div>
+                </div>
+                <br />
+                <div class="flex">
+                    <div class="w-1/3">
+                        <p class="h-8 leading-8">Denim Jacket</p>
+                    </div>
+                    <div class="w-2/3">
+                        <v-progress-linear v-model="knowledge" color="black" height="25">
+                            <strong>{{ Math.ceil(knowledge) }}%</strong>
+                        </v-progress-linear>
+                    </div>
+                </div>
+                <br />
+                <div class="flex">
+                    <div class="w-1/3">
+                        <p class="h-8 leading-8">Skelton T-shirt</p>
+                    </div>
+                    <div class="w-2/3">
+                        <v-progress-linear v-model="power" color="black" height="25">
+                            <template v-slot:default="{ value }">
+                                <strong>{{ Math.ceil(value) }}%</strong>
+                            </template>
+                        </v-progress-linear>
+                    </div>
+                </div>
+                <br />
             </div>
         </div>
     </div>
@@ -84,6 +135,10 @@
 
 <script>
 export default {
-    methods: {},
+    data: () => ({
+        skill: 20,
+        knowledge: 33,
+        power: 78,
+    }),
 };
 </script>

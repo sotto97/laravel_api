@@ -5575,8 +5575,141 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  methods: {}
+  data: function data() {
+    return {
+      skill: 20,
+      knowledge: 33,
+      power: 78
+    };
+  }
 });
 
 /***/ }),
@@ -5695,8 +5828,10 @@ __webpack_require__.r(__webpack_exports__);
 
 vue__WEBPACK_IMPORTED_MODULE_4__["default"].use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]); // パスとコンポーネントのマッピング
 
-var routes = [// { path: "/", component: Index },
-{
+var routes = [{
+  path: "/",
+  component: _views_Index_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+}, {
   path: "/about",
   component: _views_About_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
 }, {
@@ -28755,7 +28890,9 @@ var render = function () {
                   _c(
                     "v-list",
                     [
-                      _c("v-subheader", [_vm._v("通知一覧")]),
+                      _c("v-subheader", { staticClass: "font-semibold" }, [
+                        _vm._v("通知一覧"),
+                      ]),
                       _vm._v(" "),
                       _vm._l(_vm.notification, function (notice) {
                         return _c(
@@ -29147,17 +29284,390 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "w-full p-2" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _vm._m(1),
+    _vm._v(" "),
+    _c("div", { staticClass: "flex" }, [
+      _vm._m(2),
+      _vm._v(" "),
+      _c("div", { staticClass: "w-5/12 p-2" }, [
+        _vm._m(3),
+        _vm._v(" "),
+        _c("div", { staticClass: "flex" }, [
+          _vm._m(4),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "w-2/3" },
+            [
+              _c("v-progress-linear", {
+                attrs: { color: "black", height: "25" },
+                scopedSlots: _vm._u([
+                  {
+                    key: "default",
+                    fn: function (ref) {
+                      var value = ref.value
+                      return [
+                        _c("strong", [_vm._v(_vm._s(Math.ceil(value)) + "%")]),
+                      ]
+                    },
+                  },
+                ]),
+                model: {
+                  value: _vm.skill,
+                  callback: function ($$v) {
+                    _vm.skill = $$v
+                  },
+                  expression: "skill",
+                },
+              }),
+            ],
+            1
+          ),
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("div", { staticClass: "flex" }, [
+          _vm._m(5),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "w-2/3" },
+            [
+              _c(
+                "v-progress-linear",
+                {
+                  attrs: { color: "black", height: "25" },
+                  model: {
+                    value: _vm.knowledge,
+                    callback: function ($$v) {
+                      _vm.knowledge = $$v
+                    },
+                    expression: "knowledge",
+                  },
+                },
+                [_c("strong", [_vm._v(_vm._s(Math.ceil(_vm.knowledge)) + "%")])]
+              ),
+            ],
+            1
+          ),
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("div", { staticClass: "flex" }, [
+          _vm._m(6),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "w-2/3" },
+            [
+              _c("v-progress-linear", {
+                attrs: { color: "black", height: "25" },
+                scopedSlots: _vm._u([
+                  {
+                    key: "default",
+                    fn: function (ref) {
+                      var value = ref.value
+                      return [
+                        _c("strong", [_vm._v(_vm._s(Math.ceil(value)) + "%")]),
+                      ]
+                    },
+                  },
+                ]),
+                model: {
+                  value: _vm.power,
+                  callback: function ($$v) {
+                    _vm.power = $$v
+                  },
+                  expression: "power",
+                },
+              }),
+            ],
+            1
+          ),
+        ]),
+        _vm._v(" "),
+        _c("br"),
+      ]),
+    ]),
+  ])
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w-full" }, [
-      _c("div", { staticClass: "w-1/2 mx-auto bg-green-500" }, [
-        _c("button", [_vm._v("Login")]),
+    return _c("div", { staticClass: "flex h-10" }, [
+      _c(
+        "div",
+        { staticClass: "w-1/6 bg-gray-300 h-10 justify-self-start rounded-sm" },
+        [
+          _c("div", { staticClass: "flex justify-center p-1" }, [
+            _c(
+              "p",
+              {
+                staticClass:
+                  "bg-white w-1/2 h-8 leading-8 text-center rounded-sm cursor-pointer",
+              },
+              [_vm._v("Table")]
+            ),
+            _vm._v(" "),
+            _c(
+              "p",
+              {
+                staticClass:
+                  "w-1/2 h-8 leading-8 text-center rounded-sm cursor-pointer hover:bg-gray-400 transition",
+              },
+              [_vm._v("Chart")]
+            ),
+          ]),
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "w-4/6 h-8 justify-self-center" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "w-1/6 h-8 justify-self-end" }, [
+        _c(
+          "select",
+          { staticClass: "form-control", attrs: { name: "sort", id: "" } },
+          [
+            _c("option", { attrs: { value: "latest" } }, [_vm._v("Latest")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "latest" } }, [
+              _vm._v("Last Month"),
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "latest" } }, [_vm._v("Oldest")]),
+          ]
+        ),
       ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mx-auto flex py-4" }, [
+      _c(
+        "div",
+        {
+          staticClass:
+            "w-1/4 h-28 mx-auto border-solid border-2 bg-zinc-800 text-white text-left rounded-md shadow-md",
+        },
+        [
+          _c("div", { staticClass: "p-3 border-white border-b-2" }, [
+            _c("h1", [_vm._v("TOTAL ORDERS")]),
+          ]),
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass:
+            "w-1/4 h-28 mx-auto border-solid border-2 bg-white text-zinc-800 text-left rounded-md shadow-md",
+        },
+        [_c("h1", [_vm._v("PRODUCT SOLD")])]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass:
+            "w-1/4 h-28 mx-auto border-solid border-2 bg-white text-zinc-800 text-left rounded-md shadow-md",
+        },
+        [_c("h1", [_vm._v("REVENUE")])]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass:
+            "w-1/4 h-28 mx-auto border-solid border-2 bg-white text-zinc-800 text-left rounded-md shadow-md",
+        },
+        [_c("h1", [_vm._v("TOTAL VISITOR")])]
+      ),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "w-7/12 p-2" }, [
+      _c("div", { staticClass: "flex w-full" }, [
+        _c("div", { staticClass: "w-1/2 h-12 leading-12" }, [
+          _c("h1", { staticClass: "font-semibold text-xl" }, [
+            _vm._v("Recent Order"),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "w-1/2 h-12 leading-8" }, [
+          _c(
+            "p",
+            {
+              staticClass:
+                "text-right text-zinc-700 font-semibold cursor-pointer",
+            },
+            [_vm._v("View All >")]
+          ),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c(
+        "table",
+        {
+          staticClass:
+            "w-full text-center border-collapse border border-slate-500",
+        },
+        [
+          _c("tbody", {}, [
+            _c(
+              "tr",
+              {
+                staticClass:
+                  "border border-slate-600 h-12 hover:bg-zinc-800 hover:text-white cursor-pointer transition",
+              },
+              [
+                _c("td", [_vm._v("Daniel Ropes")]),
+                _vm._v(" "),
+                _c("td", [_vm._v("INV-MC300")]),
+                _vm._v(" "),
+                _c("td", [_vm._v("March 12,2020")]),
+                _vm._v(" "),
+                _c("td", [_vm._v("$25,000")]),
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "tr",
+              {
+                staticClass:
+                  "h-12 border border-slate-600 hover:bg-zinc-800 hover:text-white cursor-pointer transition",
+              },
+              [
+                _c("td", [_vm._v("Daniel Ropes")]),
+                _vm._v(" "),
+                _c("td", [_vm._v("INV-MC300")]),
+                _vm._v(" "),
+                _c("td", [_vm._v("March 12,2020")]),
+                _vm._v(" "),
+                _c("td", [_vm._v("$25,000")]),
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "tr",
+              {
+                staticClass:
+                  "h-12 border border-slate-600 hover:bg-zinc-800 hover:text-white cursor-pointer transition",
+              },
+              [
+                _c("td", [_vm._v("Daniel Ropes")]),
+                _vm._v(" "),
+                _c("td", [_vm._v("INV-MC300")]),
+                _vm._v(" "),
+                _c("td", [_vm._v("March 12,2020")]),
+                _vm._v(" "),
+                _c("td", [_vm._v("$25,000")]),
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "tr",
+              {
+                staticClass:
+                  "h-12 border border-slate-600 hover:bg-zinc-800 hover:text-white cursor-pointer transition",
+              },
+              [
+                _c("td", [_vm._v("Daniel Ropes")]),
+                _vm._v(" "),
+                _c("td", [_vm._v("INV-MC300")]),
+                _vm._v(" "),
+                _c("td", [_vm._v("March 12,2020")]),
+                _vm._v(" "),
+                _c("td", [_vm._v("$25,000")]),
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "tr",
+              {
+                staticClass:
+                  "h-12 border border-slate-600 hover:bg-zinc-800 hover:text-white cursor-pointer transition",
+              },
+              [
+                _c("td", [_vm._v("Daniel Ropes")]),
+                _vm._v(" "),
+                _c("td", [_vm._v("INV-MC300")]),
+                _vm._v(" "),
+                _c("td", [_vm._v("March 12,2020")]),
+                _vm._v(" "),
+                _c("td", [_vm._v("$25,000")]),
+              ]
+            ),
+          ]),
+        ]
+      ),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex w-full" }, [
+      _c("div", { staticClass: "w-1/2 h-12 leading-12" }, [
+        _c("h1", { staticClass: "font-semibold text-xl" }, [
+          _vm._v("Stock Report"),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "w-1/2 h-12 leading-12 text-right" }, [
+        _c(
+          "select",
+          {
+            staticClass:
+              "w-2/3 bg-white border border-zinc-800 focus:border-solid-2 focus:border-zinc-900 text-gray-700 py-1 px-4 pr-8 rounded",
+            attrs: { id: "grid-state" },
+          },
+          [
+            _c("option", { attrs: { value: "latest" } }, [_vm._v("Latest")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "latest" } }, [
+              _vm._v("Last Month"),
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "latest" } }, [_vm._v("Oldest")]),
+          ]
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "w-1/3" }, [
+      _c("p", { staticClass: "h-8 leading-8" }, [_vm._v("T-shirt")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "w-1/3" }, [
+      _c("p", { staticClass: "h-8 leading-8" }, [_vm._v("Denim Jacket")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "w-1/3" }, [
+      _c("p", { staticClass: "h-8 leading-8" }, [_vm._v("Skelton T-shirt")]),
     ])
   },
 ]
