@@ -19,18 +19,60 @@
         </div>
         <div class="mx-auto flex py-4">
             <div class="w-1/4 h-28 mx-auto border-solid border-2 bg-zinc-800 text-white text-left rounded-md shadow-md">
-                <div class="p-3 border-white border-b-2">
+                <div class="p-3">
                     <h1>TOTAL ORDERS</h1>
+                </div>
+                <div class="w-11/12 mx-auto border-zinc-400 border-b-2"></div>
+                <div class="flex p-3 w-full">
+                    <div class="w-1/2 pt-1 text-left">
+                        <p class="font-semibold text-lg">40,251</p>
+                    </div>
+                    <div class="relative w-1/2">
+                        <div class="absolute pb-4 text-right text-xs inset-x-0 bottom-0">30%</div>
+                    </div>
                 </div>
             </div>
             <div class="w-1/4 h-28 mx-auto border-solid border-2 bg-white text-zinc-800 text-left rounded-md shadow-md">
-                <h1>PRODUCT SOLD</h1>
+                <div class="p-3">
+                    <h1>PRODUCT SOLD</h1>
+                </div>
+                <div class="w-11/12 mx-auto border-zinc-400 border-b-2"></div>
+                <div class="flex p-3 w-full">
+                    <div class="w-1/2 pt-1 text-left">
+                        <p class="font-semibold text-lg">125,198</p>
+                    </div>
+                    <div class="relative w-1/2">
+                        <div class="absolute pb-4 text-right text-xs inset-x-0 bottom-0">40%</div>
+                    </div>
+                </div>
             </div>
             <div class="w-1/4 h-28 mx-auto border-solid border-2 bg-white text-zinc-800 text-left rounded-md shadow-md">
-                <h1>REVENUE</h1>
+                <div class="p-3">
+                    <h1>REVENUE</h1>
+                </div>
+                <div class="w-11/12 mx-auto border-zinc-400 border-b-2"></div>
+                <div class="flex p-3 w-full">
+                    <div class="w-1/2 pt-1 text-left">
+                        <p class="font-semibold text-lg">132,302,100</p>
+                    </div>
+                    <div class="relative w-1/2">
+                        <div class="absolute pb-4 text-right text-xs inset-x-0 bottom-0">10%</div>
+                    </div>
+                </div>
             </div>
             <div class="w-1/4 h-28 mx-auto border-solid border-2 bg-white text-zinc-800 text-left rounded-md shadow-md">
-                <h1>TOTAL VISITOR</h1>
+                <div class="p-3">
+                    <h1>TOTAL VISITOR</h1>
+                </div>
+                <div class="w-11/12 mx-auto border-zinc-400 border-b-2"></div>
+                <div class="flex p-3 w-full">
+                    <div class="w-1/2 pt-1 text-left">
+                        <p class="font-semibold text-lg">62,878</p>
+                    </div>
+                    <div class="relative w-1/2">
+                        <div class="absolute pb-4 text-right text-xs inset-x-0 bottom-0">12%</div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="flex">
