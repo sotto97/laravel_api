@@ -1,7 +1,7 @@
 <template>
     <div class="w-full p-2">
         <div class="flex h-10">
-            <div class="w-1/6 bg-gray-300 h-10 justify-self-start rounded-sm">
+            <div class="w-1/6 bg-gray-300 mt-2 h-10 justify-self-start rounded-sm">
                 <!-- 文字列の上下中央寄せ h-8 leading-8 text-center-->
                 <div class="flex justify-center p-1">
                     <p class="bg-white w-1/2 h-8 leading-8 text-center rounded-sm cursor-pointer">Table</p>
@@ -10,11 +10,12 @@
             </div>
             <div class="w-4/6 h-8 justify-self-center"></div>
             <div class="w-1/6 h-8 justify-self-end">
-                <select name="sort" id="" class="form-control">
+                <v-select :items="items" class="p-0" label="Sort" solo></v-select>
+                <!-- <select name="sort" id="" class="form-control">
                     <option value="latest">Latest</option>
                     <option value="latest">Last Month</option>
                     <option value="latest">Oldest</option>
-                </select>
+                </select> -->
             </div>
         </div>
         <div class="mx-auto flex py-4">
@@ -122,15 +123,16 @@
             </div>
             <div class="w-5/12 p-2">
                 <div class="flex w-full">
-                    <div class="w-1/2 h-12 leading-12">
-                        <h1 class="font-semibold text-xl">Stock Report</h1>
+                    <div class="w-1/2">
+                        <p class="font-semibold text-xl pt-3">Stock Report</p>
                     </div>
-                    <div class="w-1/2 h-12 leading-12 text-right">
-                        <select class="w-2/3 bg-white border border-zinc-800 focus:border-solid-2 focus:border-zinc-900 text-gray-700 py-1 px-4 pr-8 rounded" id="grid-state">
+                    <div class="w-1/2 text-right">
+                        <v-select :items="items" class="p-0" label="Sort" solo></v-select>
+                        <!-- <select class="w-2/3 bg-white border border-zinc-800 focus:border-solid-2 focus:border-zinc-900 text-gray-700 py-1 px-4 pr-8 rounded" id="grid-state">
                             <option value="latest">Latest</option>
                             <option value="latest">Last Month</option>
                             <option value="latest">Oldest</option>
-                        </select>
+                        </select> -->
                     </div>
                 </div>
                 <div class="flex">
@@ -181,6 +183,8 @@ export default {
         skill: 20,
         knowledge: 33,
         power: 78,
+        tab: null,
+        items: ["Latest", "Last", "Oldest"],
     }),
 };
 </script>
