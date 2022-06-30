@@ -68,8 +68,8 @@
             <template v-slot:extension>
                 <v-tabs v-model="tab" align-with-title>
                     <v-tabs-slider color="white"></v-tabs-slider>
-                    <v-tab v-for="item in items" :key="item">
-                        {{ item }}
+                    <v-tab v-for="item in items" :key="item.name" :to="item.link">
+                        {{ item.name }}
                     </v-tab>
                 </v-tabs>
             </template>
@@ -115,7 +115,11 @@ export default {
                 { name: "Directives", icon: "mdi-function" },
                 { name: "Preminum themes", icon: "mdi-vuetify" },
             ],
-            items: ["Summary", "Statics", "Overview"],
+            items: [
+                { name: "Summary", link: "/" },
+                { name: "Statics", link: "/statics" },
+                { name: "Overview", link: "/overview" },
+            ],
             text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         };
     },
