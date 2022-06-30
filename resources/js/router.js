@@ -5,6 +5,9 @@ import VueRouter from "vue-router";
 import Index from "./views/Index.vue";
 import About from "./views/About.vue";
 import Demo from "./views/Demo.vue";
+import Statics from "./views/Statics.vue";
+import Overview from "./views/Overview.vue";
+import Books from "./views/Books.vue";
 
 // ルータをインストール
 Vue.use(VueRouter);
@@ -14,6 +17,9 @@ const routes = [
     { path: "/", component: Index },
     { path: "/about", component: About },
     { path: "/demo", component: Demo },
+    { path: "/statics", component: Statics },
+    { path: "/overview", component: Overview },
+    { path: "/books", component: Books },
 ];
 
 // VueRouterインスタンスを作成する
