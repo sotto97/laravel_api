@@ -1,19 +1,20 @@
 <template>
     <div>
+        <!-- タイトル -->
         <div class="flex">
             <div class="w-7/12 p-2">
                 <p class="font-semibold text-xl pt-3">Books</p>
             </div>
         </div>
-        <div>
-            <button @click="getBooks">これを押してね</button>
-            <button @click="loseBooks">消してね</button>
+        <!-- 新規作成フォーム -->
+        <div class="">
+            <form @submit.prevent="addBook">
+                <input type="text" v-model="title" name="title" id="" class="w-1/3 py-1 px-4 border-2 border-solid" />
+                <input type="text" v-model="author" name="author" id="" class="w-1/3 py-1 px-4 border-2 border-solid" />
+                <button type="submit" class="py-2 px-6 w-1/4 cursor-pointer bg-zinc-800 text-white rounded-md hover:bg-zinc-500 transition">新規登録</button>
+            </form>
         </div>
-        <form @submit.prevent="addBook">
-            <input type="text" v-model="title" name="title" id="" class="py-1 px-4 border-2 border-solid" />
-            <input type="text" v-model="author" name="author" id="" class="py-1 px-4 border-2 border-solid" />
-            <button type="submit" class="py-2 px-6 cursor-pointer bg-zinc-800 text-white rounded-md hover:bg-zinc-500 transition">新規登録</button>
-        </form>
+        <!-- 一覧描画 -->
         <table class="w-full text-center border-collapse border border-slate-500">
             <thead class="">
                 <tr class="border border-slate-600 h-12 hover:bg-zinc-800 hover:text-white cursor-pointer transition">
@@ -24,7 +25,6 @@
                     <th>UPDATE</th>
                 </tr>
             </thead>
-
             <tbody class="">
                 <tr v-for="(book, index) in books.data" :key="index" class="border border-slate-600 h-12 hover:bg-zinc-800 hover:text-white cursor-pointer transition">
                     <td>{{ book.id }}</td>
