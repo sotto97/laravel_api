@@ -13,10 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// SPAの構造上これを記載しないと画面reload時に404がでてしまうので以下を設定
+Route::get('/{any}', function () {
+    return view('welcome');
+})->where('any', '.*');
