@@ -1,10 +1,8 @@
 <template>
-    <div>
+    <div class="w-full p-2">
         <!-- タイトル -->
-        <div class="flex">
-            <div class="w-7/12 p-2">
-                <p class="font-semibold text-xl pt-3">Books</p>
-            </div>
+        <div class="p-2">
+            <p class="font-semibold text-xl">Books</p>
         </div>
         <!-- 新規作成フォーム -->
         <div class="">
@@ -23,6 +21,7 @@
                     <th>AUTHOR</th>
                     <th>CREATE</th>
                     <th>UPDATE</th>
+                    <th>DEL</th>
                 </tr>
             </thead>
             <tbody class="">
@@ -32,6 +31,9 @@
                     <td>{{ book.author }}</td>
                     <td>{{ book.created_at }}</td>
                     <td>{{ book.updated_at }}</td>
+                    <td>
+                        <v-btn @click="deleteBook(book.id)" text><v-icon class="hover:text-white bg-zinc-800 text-white">mdi-close-box</v-icon></v-btn>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -72,6 +74,17 @@ export default {
                     console.log(res);
                     this.title = "";
                     this.author = "";
+                    this.getBooks();
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        },
+        deleteBook: function (id) {
+            axios
+                .delete("/api/books/" + id)
+                .then((res) => {
+                    console.log(res);
                     this.getBooks();
                 })
                 .catch((err) => {
