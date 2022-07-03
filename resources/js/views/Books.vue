@@ -8,36 +8,30 @@
         <div>
             <button @click="getBooks">これを押してね</button>
             <button @click="loseBooks">消してね</button>
-            {{ this.books }}
         </div>
+        <form @submit.prevent="addBook">
+            <input type="text" v-model="title" name="title" id="" class="py-1 px-4 border-2 border-solid" />
+            <input type="text" v-model="author" name="author" id="" class="py-1 px-4 border-2 border-solid" />
+            <button type="submit" class="py-2 px-6 cursor-pointer bg-zinc-800 text-white rounded-md hover:bg-zinc-500 transition">新規登録</button>
+        </form>
         <table class="w-full text-center border-collapse border border-slate-500">
             <thead class="">
                 <tr class="border border-slate-600 h-12 hover:bg-zinc-800 hover:text-white cursor-pointer transition">
                     <th>ID</th>
                     <th>TITLE</th>
+                    <th>AUTHOR</th>
                     <th>CREATE</th>
                     <th>UPDATE</th>
                 </tr>
             </thead>
 
             <tbody class="">
-                <tr class="border border-slate-600 h-12 hover:bg-zinc-800 hover:text-white cursor-pointer transition">
-                    <td>Daniel Ropes</td>
-                    <td>INV-MC300</td>
-                    <td>March 12,2020</td>
-                    <td>$25,000</td>
-                </tr>
-                <tr class="h-12 border border-slate-600 hover:bg-zinc-800 hover:text-white cursor-pointer transition">
-                    <td>Daniel Ropes</td>
-                    <td>INV-MC300</td>
-                    <td>March 12,2020</td>
-                    <td>$25,000</td>
-                </tr>
-                <tr class="h-12 border border-slate-600 hover:bg-zinc-800 hover:text-white cursor-pointer transition">
-                    <td>Daniel Ropes</td>
-                    <td>INV-MC300</td>
-                    <td>March 12,2020</td>
-                    <td>$25,000</td>
+                <tr v-for="(book, index) in books.data" :key="index" class="border border-slate-600 h-12 hover:bg-zinc-800 hover:text-white cursor-pointer transition">
+                    <td>{{ book.id }}</td>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.created_at }}</td>
+                    <td>{{ book.updated_at }}</td>
                 </tr>
             </tbody>
         </table>
@@ -51,6 +45,8 @@ export default {
     data: () => ({
         books: [],
         message: "",
+        title: "",
+        author: "",
     }),
     methods: {
         getBooks: function () {
@@ -59,14 +55,32 @@ export default {
                 .then((res) => {
                     this.books = res.data;
                 })
-                .catch((error) => {
-                    console.log("取得できませんでした。");
-                    // this.message = error;
+                .catch((err) => {
+                    console.log(err);
                 });
         },
         loseBooks: function () {
             this.books = "";
         },
+        addBook: function () {
+            axios
+                .post("/api/books", {
+                    title: this.title,
+                    author: this.author,
+                })
+                .then((res) => {
+                    console.log(res);
+                    this.title = "";
+                    this.author = "";
+                    this.getBooks();
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        },
+    },
+    mounted() {
+        this.getBooks();
     },
 };
 </script>
