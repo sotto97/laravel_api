@@ -119,6 +119,7 @@ export default {
                 { name: "Summary", link: "/" },
                 { name: "Statics", link: "/statics" },
                 { name: "Overview", link: "/overview" },
+                { name: "Book", link: "/books" },
             ],
             text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         };

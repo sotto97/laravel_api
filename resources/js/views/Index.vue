@@ -14,9 +14,9 @@
             </div>
         </div>
         <div class="mx-auto flex py-4">
-            <div class="w-1/4 h-28 mx-auto border-solid border-2 bg-zinc-800 text-white text-left rounded-md shadow-md">
+            <div class="w-1/4 h-40 mx-auto border-solid border-2 bg-zinc-800 text-white text-left rounded-md shadow-md">
                 <div class="p-3">
-                    <h1>TOTAL ORDERS</h1>
+                    <h1 class="text-lg">TOTAL ORDERS</h1>
                 </div>
                 <div class="w-11/12 mx-auto border-zinc-400 border-b-2"></div>
                 <div class="flex p-3 w-full">
@@ -28,8 +28,8 @@
                     </div>
                 </div>
             </div>
-            <div class="w-1/4 h-28 mx-auto border-solid border-2 bg-white text-zinc-800 text-left rounded-md shadow-md">
-                <div class="p-3">
+            <div class="w-1/4 h-40 mx-auto border-solid border-2 bg-white text-zinc-800 text-left rounded-md shadow-md">
+                <div class="p-3 text-lg">
                     <h1>PRODUCT SOLD</h1>
                 </div>
                 <div class="w-11/12 mx-auto border-zinc-400 border-b-2"></div>
@@ -42,8 +42,8 @@
                     </div>
                 </div>
             </div>
-            <div class="w-1/4 h-28 mx-auto border-solid border-2 bg-white text-zinc-800 text-left rounded-md shadow-md">
-                <div class="p-3">
+            <div class="w-1/4 h-40 mx-auto border-solid border-2 bg-white text-zinc-800 text-left rounded-md shadow-md">
+                <div class="p-3 text-lg">
                     <h1>REVENUE</h1>
                 </div>
                 <div class="w-11/12 mx-auto border-zinc-400 border-b-2"></div>
@@ -56,8 +56,8 @@
                     </div>
                 </div>
             </div>
-            <div class="w-1/4 h-28 mx-auto border-solid border-2 bg-white text-zinc-800 text-left rounded-md shadow-md">
-                <div class="p-3">
+            <div class="w-1/4 h-40 mx-auto border-solid border-2 bg-white text-zinc-800 text-left rounded-md shadow-md">
+                <div class="p-3 text-lg">
                     <h1>TOTAL VISITOR</h1>
                 </div>
                 <div class="w-11/12 mx-auto border-zinc-400 border-b-2"></div>
@@ -165,7 +165,7 @@
             </div>
         </div>
         <!-- bookコンポーネントの読み込み -->
-        <book />
+        <!-- <book /> -->
     </div>
 </template>
 
