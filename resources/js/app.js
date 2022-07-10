@@ -27,6 +27,7 @@ Vue.use(Vuetify);
 
 Vue.component("example-component", require("./components/ExampleComponent.vue").default);
 Vue.component("main-layout", require("./components/MainLayout.vue").default);
+Vue.component("book", require("./views/Books.vue").default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
