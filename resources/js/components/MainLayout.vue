@@ -29,6 +29,9 @@
         <v-app-bar color="grey darken-4" dark app clipped-left>
             <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
             <v-toolbar-title>Dashboard</v-toolbar-title>
+            <v-switch :value="darkMode" @change="toggleDarkMode" :label="`toggle ${switchLabel} mode`"></v-switch>
+            <v-col class="primary">I am a primary card</v-col>
+            <v-col class="secondary">I am a secondary card</v-col>
             <v-spacer></v-spacer>
             <v-toolbar-items>
                 <!-- コメント機能 -->
@@ -83,9 +86,12 @@
 </template>
 
 <script>
+import { threadId } from "worker_threads";
+
 export default {
     data() {
         return {
+            darkMode: false,
             drawer: null,
             supports: [
                 { name: "よくある問い合わせ", icon: "mdi-vuetify", link: "/support" },
@@ -123,6 +129,17 @@ export default {
             ],
             text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         };
+    },
+    methods: {
+        toggleDarkMode: function () {
+            this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+            this.darkMode = !this.darkMode;
+        },
+    },
+    computed: {
+        switchLabel: function () {
+            return this.darkMode ? "light" : "dark";
+        },
     },
 };
 </script>

@@ -9,6 +9,7 @@ require("./bootstrap");
 import Vue from "vue";
 import router from "./router";
 import Vuetify from "vuetify";
+import colors from "vuetify/lib/util/colors";
 
 window.Vue = Vue;
 // Vue.use(VueRouter);
@@ -40,5 +41,17 @@ const app = new Vue({
     router,
     vuetify: new Vuetify({
         iconfont: "mdi",
+        theme: {
+            themes: {
+                light: {
+                    primary: colors.green.accent3,
+                    secondary: colors.deepOrange.lighten1,
+                },
+                dark: {
+                    primary: "#90CAF9",
+                    secondary: "#E91E63",
+                },
+            },
+        },
     }),
 });
