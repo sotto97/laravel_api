@@ -5,7 +5,7 @@
             <v-container>
                 <v-list-item>
                     <v-list-item-content>
-                        <v-list-item-title class="title grey--text text-darken-2"> Navigation Lists </v-list-item-title>
+                        <v-list-item-title class="title grey--text text-darken-2"> メニュー </v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
                 <v-divider></v-divider>
@@ -104,17 +104,13 @@ export default {
             ],
             nav_lists: [
                 {
-                    name: "Getting Started",
+                    name: "ダッシュボード",
                     icon: "mdi-vuetify",
                     lists: ["Quick Start", "Pre^made layouts"],
                 },
-                { name: "Customization", icon: "mdi-cogs" },
-                {
-                    name: "Styles & animations",
-                    icon: "mdi-palette",
-                    lists: ["Colors", "Content", "Display"],
-                },
-                { name: "UI Components", icon: "mdi-view-dashboard", lists: ["API explorer", "Alerts"] },
+                { name: "分析グラフ", icon: "mdi-cogs" },
+                { name: "各マスタ", icon: "mdi-palette", lists: ["部位マスタ", "種目マスタ"] },
+                { name: "設定", icon: "mdi-view-dashboard", lists: ["API explorer", "Alerts"] },
                 { name: "Directives", icon: "mdi-function" },
                 { name: "Preminum themes", icon: "mdi-vuetify" },
             ],
