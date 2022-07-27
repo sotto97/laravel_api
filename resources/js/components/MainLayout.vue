@@ -29,9 +29,6 @@
         <v-app-bar color="grey darken-4" dark app clipped-left>
             <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
             <v-toolbar-title>Dashboard</v-toolbar-title>
-            <v-switch :value="darkMode" @change="toggleDarkMode" :label="`toggle ${switchLabel} mode`"></v-switch>
-            <v-col class="primary">I am a primary card</v-col>
-            <v-col class="secondary">I am a secondary card</v-col>
             <v-spacer></v-spacer>
             <v-toolbar-items>
                 <!-- コメント機能 -->
@@ -75,6 +72,8 @@
                         {{ item.name }}
                     </v-tab>
                 </v-tabs>
+                <!-- DarkThemeを設定するtoggle -->
+                <v-switch v-model="$vuetify.theme.dark" inset label="Dark" persistent-hint></v-switch>
             </template>
         </v-app-bar>
         <v-main>
@@ -86,8 +85,6 @@
 </template>
 
 <script>
-import { threadId } from "worker_threads";
-
 export default {
     data() {
         return {
